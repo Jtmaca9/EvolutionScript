@@ -34,5 +34,6 @@ void draw()
   for (int i = 0; i < creatureNumber; i++)
   {
     creature[i].collide();
+    creature[i].stay();
   }
 }
