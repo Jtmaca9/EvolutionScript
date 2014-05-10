@@ -6,15 +6,19 @@ int screenY = 800;
 int creatureNumber = 1000;
 
 // global speed
-int speed = 10;
+int speed = 2;
 
-//size calculations
+
 //Random sizegen;
 
 float norm;
 float sd = 3.2;
 float mean = 15;
 
+//colour 
+color red = color(255, 0 , 0);
+color green = color(0, 255 , 0);
+color blue = color(0, 0 , 255);
 
 // Create a number of obects from the creature class to the value of creatureNumber
   Creature[] creature = new Creature[creatureNumber];

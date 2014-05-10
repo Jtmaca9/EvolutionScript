@@ -5,12 +5,24 @@ void initCreature()
   {
     if ( i < 1000)
     {
+      color cColour;
+      int c = (int)random(3);
       norm = randomGaussian();
       int b = (int)random(1);
       float rndm = (sd * norm + mean);
+      if(c == 0)
+      {
+        cColour = red;
+      }else if (c == 1)
+      {
+        cColour = green;
+      }else
+      {
+        cColour = blue;
+      }
       creature[i] = new Creature((int)random(2), rndm, b, (int)random(0 + rndm, width - rndm), 
       (int)random(0 + rndm, height - rndm),
-      true, i,  color((int)random(255), (int)random(255), (int)random(255)), creature);
+      true, i,  cColour, creature);
     }
     else 
     {
