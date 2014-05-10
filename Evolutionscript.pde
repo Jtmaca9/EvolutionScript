@@ -16,9 +16,7 @@ float sd = 3.2;
 float mean = 15;
 
 //colour 
-color red = color(255, 0 , 0);
-color green = color(0, 255 , 0);
-color blue = color(0, 0 , 255);
+int r, g, b;
 
 // Create a number of obects from the creature class to the value of creatureNumber
   Creature[] creature = new Creature[creatureNumber];

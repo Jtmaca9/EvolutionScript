@@ -3,30 +3,41 @@ void initCreature()
 {
   for (int i = 0; i < creatureNumber; i++)
   {
-    if ( i < 1000)
+    if ( i < 100)
     {
-      color cColour;
       int c = (int)random(3);
       norm = randomGaussian();
-      int b = (int)random(1);
+      int B = (int)random(1);
       float rndm = (sd * norm + mean);
       if(c == 0)
       {
-        cColour = red;
-      }else if (c == 1)
-      {
-        cColour = green;
-      }else
-      {
-        cColour = blue;
+        // Red
+        r = 255;
+        g = 0;
+        b = 0;
       }
-      creature[i] = new Creature((int)random(2), rndm, b, (int)random(0 + rndm, width - rndm), 
+      else if (c == 1)
+      {
+        // Green
+        r = 0;
+        g = 255;
+        b = 0;
+      }
+      else
+      {
+        // Blue
+        r = 0;
+        g = 0;
+        b = 255;
+      }
+      
+      creature[i] = new Creature((int)random(2), rndm, B, (int)random(0 + rndm, width - rndm), 
       (int)random(0 + rndm, height - rndm),
-      true, i,  cColour, creature);
+      true, i,  color(r, g, b));
     }
     else 
     {
-      creature[i] = new Creature(0, 0, 0, 0, 0, false, i, color(255), creature);
+      creature[i] = new Creature(0, 0, 0, 0, 0, false, i, color(255));
     }
   }
 }

@@ -1,4 +1,4 @@
-// Function to update the creatures attributes
+// Function to update the creatures
 void updateCreature()
 {
   for (int i = 0; i < 1000; i++)
