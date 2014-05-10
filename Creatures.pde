@@ -1,11 +1,12 @@
 // Sets up the Creature class
 class Creature {
-  int shape, x, y, id, size, behaviour;
+  int shape, id, behaviour;
+  float size, x, y;
   boolean alive;
   color colour;
   Creature[] others;
 
-  Creature(int Shape, int Size, int Behaviour, int xpos, int ypos, boolean Alive, int idin,  color c, Creature[] oin)
+  Creature(int Shape, float Size, int Behaviour, float xpos, float ypos, boolean Alive, int idin,  color c, Creature[] oin)
   {
     shape = Shape;
     x = xpos;
@@ -44,15 +45,35 @@ class Creature {
   // Collide
   void collide()
   {
-     for (int i = id + 1; i < 1000; i++)
+     for (int i = 0; i < 1000; i++)
      {
-        float minDistance = size;
-        float xDist = x - others[i].x;
-        float yDist = y - others[i].y;
+        float minDistance = size/2 + creature[i].size/2;
+        float xDist = x - creature[i].x;
+        float yDist = y - creature[i].y;
         float dist = sqrt(xDist*xDist + yDist*yDist);
-        if (dist < minDistance)
+        if (dist < minDistance && creature[i].alive == true && alive == true && creature[i].id != id)
         {
-          creature[i].alive = false;
+          int decision = 0;
+          if(decision == 0)
+          {
+            if(size < creature[i].size)
+            {
+            alive = false;
+            }
+            else if(size == creature[i].size)
+            {
+              int rndm = (int)random(2);
+              if(rndm == 0)
+              {
+                alive = false;
+              }
+              else
+              {
+                creature[i].alive = false;
+              }
+            }
+          }
+          
         }
      }
 }

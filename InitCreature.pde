@@ -3,10 +3,11 @@ void initCreature()
 {
   for (int i = 0; i < creatureNumber; i++)
   {
-    if ( i < 100)
+    if ( i < 1000)
     {
+      norm = randomGaussian();
       int b = (int)random(1);
-      int rndm = (int)random(5,15);
+      float rndm = (sd * norm + mean);
       creature[i] = new Creature((int)random(2), rndm, b, (int)random(0 + rndm, width - rndm), 
       (int)random(0 + rndm, height - rndm),
       true, i,  color((int)random(255), (int)random(255), (int)random(255)), creature);

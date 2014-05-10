@@ -5,7 +5,15 @@ int screenY = 800;
 // Set maximum number of creatures that can be created
 int creatureNumber = 1000;
 
+// global speed
+int speed = 10;
 
+//size calculations
+//Random sizegen;
+
+float norm;
+float sd = 3.2;
+float mean = 15;
 
 
 // Create a number of obects from the creature class to the value of creatureNumber
@@ -36,4 +44,5 @@ void draw()
     creature[i].collide();
     creature[i].stay();
   }
+ 
 }

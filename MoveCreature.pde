@@ -15,19 +15,19 @@ void moveCreature()
 
         if (direction == 0)
         {
-          creature[i].x += 1;
+          creature[i].x += speed;
         }
         else if (direction == 1)
         {
-          creature[i].x -= 1;
+          creature[i].x -= speed;
         }
         else if (direction == 2)
         {
-          creature[i].y += 1;
+          creature[i].y += speed;
         }
         else if (direction == 3)
         {
-          creature[i].y -= 1;
+          creature[i].y -= speed;
         }
       }
 
