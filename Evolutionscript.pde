@@ -6,7 +6,7 @@ int screenY = 800;
 int creatureNumber = 1000;
 
 // global speed
-int speed = 2;
+int speed = 1;
 
 
 //Random sizegen;
